@@ -18,12 +18,13 @@
             <a href="" class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i>Recarregar</a>
             <a href="" class="btn btn-danger"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Sacar</a>
         </div>
+        
         <div class="box-body">
             <div class="col-lg-3 col-xs-6">
                 <div class="box-body">
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>R$ 90,00<sup style="font-size: 20px">%</sup></h3>
+                            <h3>R$ {{ number_format($amount, 2, '.', '') }}</h3>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
