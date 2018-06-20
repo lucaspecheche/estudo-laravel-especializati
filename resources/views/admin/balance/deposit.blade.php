@@ -23,7 +23,7 @@
         	<form method="post" action="{{ route('deposit.store') }}">
                 {!! csrf_field() !!}
         		<div class="form-group">
-        			<input type="text" placeholder="Valor Recarga" name="" class="form-control">
+        			<input type="text" placeholder="Valor Recarga" name="value" class="form-control">
         		</div>
         		<div class="form-group">
         			<button type="submit" class="btn btn-success">Recarregar</button>
