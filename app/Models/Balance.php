@@ -8,8 +8,20 @@ class Balance extends Model
 {
     public $timestamps = false; //Não insere as os creat_at e update_at a cada utili
 
-    public function deposit($value)
+    public function deposit(float $value) : Array
     {
-        dd($value);
+        $this->amount += number_format($value, 2, '.', '');
+        $deposit = $this->save();
+
+        if($deposit)
+            return [
+                'success' => true,
+                'message' => 'Sucesso ao recarregar'
+            ];
+
+        return [
+            'success' => false,
+            'message' => 'Falha ao recarregar'
+        ];
     }
 }
