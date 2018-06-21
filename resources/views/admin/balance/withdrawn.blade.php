@@ -20,7 +20,7 @@
         </div>
         @include('admin.includes.alerts')
         <div class="box-body">
-        	<form method="post" action="{{ route('withdrawn.store') }}">
+        	<form method="post" action="{{ route('withdraw.store') }}">
                 {!! csrf_field() !!}
         		<div class="form-group">
         			<input type="text" placeholder="Valor do Saque" name="value" class="form-control">
