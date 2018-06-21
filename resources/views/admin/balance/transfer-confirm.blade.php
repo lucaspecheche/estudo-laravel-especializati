@@ -22,20 +22,21 @@
         @include('admin.includes.alerts')
         <div class="box-body">
         <p><strong>Recebedor: </strong>{{ $sender->name }}</p>
+        <p><strong>Seu Saldo Atual: R$ </strong>{{ number_format($balance->amount, 2, ',', '') }}</p>
 
-        	<form method="post" action="{{ route('transfer.store') }}">
+            <form method="POST" action="{{ route('transfer.store') }}">
                 {!! csrf_field() !!}
 
-            <input type="hidden" name="sender_id" value="{{ $sender->id }}">
+                <input type="hidden" name="sender_id" value="{{ $sender->id }}">
 
         		<div class="form-group">
-        			<input type="text" placeholder="Informe o valor" name="balance" class="form-control">
+        			<input type="text" placeholder="Informe o valor" name="value" class="form-control">
         		</div>
         		<div class="form-group">
         			<button type="submit" class="btn btn-success">Transferir</button>
 	       		</div>
 
-        	</form>
+            </form>
         </div>
     </div>
 @stop
