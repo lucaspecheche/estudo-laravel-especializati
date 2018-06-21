@@ -12,6 +12,7 @@
 @stop
 
 @section('content')
+@include('admin.includes.alerts')
     <div class="box">
 
         <div class="box-header">
@@ -20,6 +21,7 @@
         </div>
         
         <div class="box-body">
+            
             <div class="col-lg-3 col-xs-6">
                 <div class="box-body">
                     <div class="small-box bg-green">
