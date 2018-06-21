@@ -12,6 +12,9 @@
 */
 
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
+
+    Route::get ('withdrawn', 'BalanceController@withdrawn')->name('balance.withdrawn');
+    Route::post ('withdrawn', 'BalanceController@withdrawnStore')->name('withdrawn.store');
 	Route::post ('deposit', 'BalanceController@depositStore')->name('deposit.store');
 	Route::get ('deposit', 'BalanceController@deposit')->name('balance.deposit');
     Route::get ('/', 'AdminController@index')->name('admin.home');
