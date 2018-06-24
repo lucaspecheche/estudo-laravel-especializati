@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::get ('/', 'AdminController@index')->name('admin.home');
     Route::get ('balance', 'BalanceController@index')->name('admin.balance');
 });
+Route::get ('meu-perfil', 'Admin\UserController@profile')->name('profile')->middleware('auth');
 
 Route::get('/', 'Site\SiteController@index')->name('home');
 
