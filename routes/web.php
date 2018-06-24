@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::get ('balance', 'BalanceController@index')->name('admin.balance');
 });
 Route::get ('meu-perfil', 'Admin\UserController@profile')->name('profile')->middleware('auth');
+Route::post ('atualizar-perfil', 'Admin\UserController@profileupdate')->name('profile.update')->middleware('auth');
 
 Route::get('/', 'Site\SiteController@index')->name('home');
 
