@@ -42,4 +42,23 @@ class Historic extends Model
     {
         return $this->belongsTo(User::class, 'user_id_transaction');
     }
+
+    public function search(Array $data, $totalPage)
+    {
+        $historics = $this->where(function ($query) use ($data) {
+
+            if (isset($data['id']))
+                $query->where('id', $data['id']);
+            
+            if (isset($data['date']))
+                $query->where('date', $data['date']);
+
+            if (isset($data['type']))
+                $query->where('type', $data['type']);
+            
+
+        })->paginate($totalPage);
+
+        return $historics;
+    }
 }
