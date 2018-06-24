@@ -11,6 +11,10 @@
     </ol>
 @stop
 
+@section('opcoes_menu')
+    @include('admin.includes.opcoes_menu')
+@stop
+
 @section('content')
 @include('admin.includes.alerts')
     <div class="box">
